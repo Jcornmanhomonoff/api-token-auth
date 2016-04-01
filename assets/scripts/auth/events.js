@@ -11,7 +11,18 @@ const addHandlers = () => {
     event.preventDefault();
     authApi.signUp(authUi.success, authUi.failure, data);
   });
+  $('#sign-in').on('submit', function (event) {
+    let data = getFormFields(this);
+    event.preventDefault();
+    authApi.signIn(authUi.signInSuccess, authUi.failure, data);
+  });
+  $('#sign-ot').on('submit', function (event) {
+    event.preventDefault();
+    authApi.signOut(authUi.signOutSuccess, authUi.failure, data);
+  });
 };
+
+
 
 module.exports = {
   addHandlers,
