@@ -16,9 +16,9 @@ const addHandlers = () => {
     event.preventDefault();
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
   });
-  $('#sign-ot').on('submit', function (event) {
+  $('#sign-out').on('submit', function (event) {
     event.preventDefault();
-    authApi.signOut(authUi.signOutSuccess, authUi.failure, data);
+    authApi.signOut(authUi.signOutSuccess, authUi.failure);
   });
 };
 
